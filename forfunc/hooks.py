@@ -138,33 +138,36 @@ app_license = "mit"
 # Hook on document methods and events
 
 # doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
+# 	"Sales Order": {
+# 		"on_submit": "forfunc.workorderdef.create_work_order"
+		
 # 	}
 # }
-
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"forfunc.tasks.all"
-# 	],
-# 	"daily": [
-# 		"forfunc.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"forfunc.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"forfunc.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"forfunc.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+    "cron": {
+        "*/2 * * * *":[
+            "forfunc.emailcron.send_email_cron"
+        ]
+    }
+	# "all": [
+	# 	"forfunc.tasks.all"
+	# ],
+	# "daily": [
+	# 	"forfunc.tasks.daily"
+	# ],
+	# "hourly": [
+	# 	"forfunc.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"forfunc.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"forfunc.tasks.monthly"
+	# ],
+}
 
 # Testing
 # -------

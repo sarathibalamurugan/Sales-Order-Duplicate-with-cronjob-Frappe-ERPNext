@@ -1,0 +1,262 @@
+{
+ "actions": [],
+ "creation": "2025-08-13 12:01:16.512830",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parent_item",
+  "item_code",
+  "item_name",
+  "column_break_5",
+  "description",
+  "section_break_6",
+  "warehouse",
+  "target_warehouse",
+  "conversion_factor",
+  "column_break_9",
+  "qty",
+  "rate",
+  "uom",
+  "section_break_9",
+  "pick_serial_and_batch",
+  "use_serial_batch_fields",
+  "column_break_11",
+  "serial_and_batch_bundle",
+  "section_break_bgys",
+  "serial_no",
+  "column_break_qlha",
+  "batch_no",
+  "actual_batch_qty",
+  "section_break_13",
+  "actual_qty",
+  "projected_qty",
+  "ordered_qty",
+  "packed_qty",
+  "column_break_16",
+  "incoming_rate",
+  "picked_qty",
+  "page_break",
+  "prevdoc_doctype",
+  "parent_detail_docname"
+ ],
+ "fields": [
+  {
+   "fieldname": "parent_item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Parent Item",
+   "oldfieldname": "parent_item",
+   "oldfieldtype": "Link"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "oldfieldname": "item_name",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "in_list_view": 1,
+   "label": "Description",
+   "oldfieldname": "description",
+   "oldfieldtype": "Text",
+   "print_width": "300px",
+   "width": "300px"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Data",
+   "label": "From Warehouse",
+   "oldfieldname": "warehouse",
+   "oldfieldtype": "Link"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Data",
+   "label": "To Warehouse (Optional)"
+  },
+  {
+   "fieldname": "conversion_factor",
+   "fieldtype": "Data",
+   "label": "Conversion Factor"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Qty",
+   "oldfieldname": "qty",
+   "oldfieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "label": "UOM",
+   "oldfieldname": "uom",
+   "oldfieldtype": "Link",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.use_serial_batch_fields === 0 || doc.docstatus === 1",
+   "fieldname": "pick_serial_and_batch",
+   "fieldtype": "Button",
+   "label": "Pick Serial / Batch No"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_serial_batch_fields",
+   "fieldtype": "Check",
+   "label": "Use Serial No / Batch Fields"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.use_serial_batch_fields === 0 || doc.docstatus === 1",
+   "fieldname": "serial_and_batch_bundle",
+   "fieldtype": "Data",
+   "label": "Serial and Batch Bundle"
+  },
+  {
+   "depends_on": "eval:doc.use_serial_batch_fields === 1",
+   "fieldname": "section_break_bgys",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.use_serial_batch_fields === 1",
+   "fieldname": "serial_no",
+   "fieldtype": "Text",
+   "label": "Serial No"
+  },
+  {
+   "fieldname": "column_break_qlha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch No"
+  },
+  {
+   "depends_on": "batch_no",
+   "fieldname": "actual_batch_qty",
+   "fieldtype": "Data",
+   "label": "Actual Batch Quantity"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "actual_qty",
+   "fieldtype": "Data",
+   "label": "Actual Qty",
+   "oldfieldname": "actual_qty",
+   "oldfieldtype": "Currency"
+  },
+  {
+   "fieldname": "projected_qty",
+   "fieldtype": "Data",
+   "label": "Projected Qty",
+   "oldfieldname": "projected_qty",
+   "oldfieldtype": "Currency"
+  },
+  {
+   "fieldname": "ordered_qty",
+   "fieldtype": "Data",
+   "label": "Ordered Qty"
+  },
+  {
+   "default": "0",
+   "fieldname": "packed_qty",
+   "fieldtype": "Data",
+   "label": "Packed Qty",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incoming_rate",
+   "fieldtype": "Data",
+   "label": "Incoming Rate"
+  },
+  {
+   "fieldname": "picked_qty",
+   "fieldtype": "Data",
+   "label": "Picked Qty"
+  },
+  {
+   "default": "0",
+   "fieldname": "page_break",
+   "fieldtype": "Check",
+   "label": "Page Break",
+   "oldfieldname": "page_break",
+   "oldfieldtype": "Check"
+  },
+  {
+   "fieldname": "prevdoc_doctype",
+   "fieldtype": "Data",
+   "label": "Prevdoc DocType",
+   "oldfieldname": "prevdoc_doctype",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fieldname": "parent_detail_docname",
+   "fieldtype": "Data",
+   "label": "Parent Detail docname",
+   "oldfieldname": "parent_detail_docname",
+   "oldfieldtype": "Data"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-08-13 17:14:04.770588",
+ "modified_by": "Administrator",
+ "module": "Forfunc",
+ "name": "Packed Items Dup",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
