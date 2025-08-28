@@ -1,1 +1,1 @@
-[Watch the demo video](./Screencast from 28-08-25 11:00:37 AM IST.webm)
+[![Watch the video](https://img.youtube.com/vi/MJdCMn4D428/0.jpg)](https://www.youtube.com/watch?v=MJdCMn4D428)
