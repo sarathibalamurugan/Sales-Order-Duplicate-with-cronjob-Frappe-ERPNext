@@ -6,7 +6,8 @@ For functions
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
-```bash
+```bashfile:///home/parthasarathi/Videos/Screencasts/Screencast%20from%2028-08-25%2011:00:37%20AM%20IST.webm
+
 cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch develop
 bench install-app forfunc
